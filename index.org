@@ -1,0 +1,12 @@
+#+title: Long-term Debt Markets
+#+author: Matt Brigida, Ph.D.
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
+#+PROPERTY: header-args    :exports none
+
+
+The English word ~credit~ comes from the Latin word =credit= which is the third-person (singular present active) of the verb ~credo~ which means ~to believe~.  For example, ~ut omnes qui credit in eum~ means ~all those that believe in him~.  This is also how we get the English word ~creed~.  So when you spend on your ~credit~ card, the credit card company believes in you---that you will pay the money back.  Similarly when we refer to ~Credit Markets~ we are referring to markets where one party lends to another.  
+
+One credit market is the market for debt securities with a maturity greater than one year.  We'll call this the /debt market/.  Note, debt securities with a maturity of less than one year belong to the /money market/.
+
+As the verb /to believe/ implies, debt securities represent promises to repay, and nothing more.  They do not represent ownership or control. 
