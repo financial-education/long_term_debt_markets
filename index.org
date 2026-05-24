@@ -1,12 +1,344 @@
-#+title: Long-term Debt Markets
+#+title: Long-term Credit Markets
 #+author: Matt Brigida, Ph.D.
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: ~/.emacs.d/org-themes/src/readtheorg_inline/readtheorg_inline.theme
 #+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
 #+PROPERTY: header-args    :exports none
 
 
-The English word ~credit~ comes from the Latin word =credit= which is the third-person (singular present active) of the verb ~credo~ which means ~to believe~.  For example, ~ut omnes qui credit in eum~ means ~all those that believe in him~.  This is also how we get the English word ~creed~.  So when you spend on your ~credit~ card, the credit card company believes in you---that you will pay the money back.  Similarly when we refer to ~Credit Markets~ we are referring to markets where one party lends to another.  
+The English word ~credit~ comes from the Latin word =credit= which is the third-person (singular present active) of the verb ~credo~ which means ~to believe~.  For example, ~ut omnes qui credit in eum~ means ~all those that believe in him~.  This is also how we get the English word ~creed~.  So when you spend on your ~credit~ card, the credit card company believes in you---that you will pay the money back.  Similarly when we refer to ~Credit Markets~ we are referring to markets where one party lends to another.
 
 One credit market is the market for debt securities with a maturity greater than one year.  We'll call this the /debt market/.  Note, debt securities with a maturity of less than one year belong to the /money market/.
 
-As the verb /to believe/ implies, debt securities represent promises to repay, and nothing more.  They do not represent ownership or control. 
+As the verb /to believe/ implies, debt securities represent promises to repay, and nothing more.  They do not represent ownership or control. That said, many interesting features can be written into the promise.
+
+* Bonds
+
+A /bond/ is the most common long-term debt security.  When a corporation or government needs to borrow money for a long period of time, it typically issues bonds.  Issuing a bond is essentially borrowing from whoever buys the bond---the bondholder becomes the lender.
+
+** Basic Bond Terminology
+
+Understanding bonds requires familiarity with a set of standard terms:
+
+- *Face Value (Par Value)*: The amount the issuer promises to repay at maturity.  Most bonds have a face value of $1,000, though government bonds are often issued in larger denominations.  This is the principal of the loan.
+
+- *Coupon Rate*: The annual interest rate stated on the bond, expressed as a percentage of face value.  A bond with a $1,000 face value and a 6% coupon rate pays $60 per year in interest.  The term /coupon/ comes from the historical practice of attaching physical coupons to bond certificates that investors would clip and present to receive their interest payments.
+
+- *Coupon Payment*: The periodic interest payment made to the bondholder.  Most bonds pay coupons semiannually (twice per year).  A $1,000 bond with a 6% annual coupon rate pays two $30 coupons per year.
+
+- *Maturity Date*: The date on which the issuer repays the face value to the bondholder and the bond ceases to exist.  Bonds can have maturities ranging from just over one year to 30 years or more.  The U.S. Treasury has even issued 100-year bonds.
+
+- *Yield to Maturity (YTM)*: The total annualized return an investor earns if they buy the bond at its current price and hold it until maturity, receiving all promised cash flows.  This is the most commonly used measure of a bond's return.  Yield to maturity accounts for both coupon payments and any gain or loss from the difference between the purchase price and face value.
+
+- *Current Yield*: Annual coupon payment divided by the bond's current market price.  This is a simpler but less complete measure of return than yield to maturity.
+
+- *Indenture*: The legal contract between the bond issuer and bondholders that specifies all the terms of the bond, including coupon rate, payment schedule, maturity, and any special provisions.
+
+** Bond Prices and Yields
+
+Perhaps the single most important relationship in fixed-income markets is that *bond prices and interest rates (yields) move in opposite directions*.  When interest rates rise, existing bond prices fall.  When interest rates fall, existing bond prices rise.
+
+The intuition is straightforward.  Suppose you hold a bond paying a 4% coupon and market interest rates rise to 6%.  Your bond is now less attractive relative to newly issued bonds---no one will pay full face value for a 4% bond when they can buy a new 6% bond.  The price of your existing bond must fall until its yield equals the prevailing market rate.
+
+Three important price relationships follow from this:
+
+1. When a bond's yield equals its coupon rate, the bond trades at *par* (its face value).
+2. When a bond's yield exceeds its coupon rate, the bond trades at a *discount* (below face value).
+3. When a bond's yield is below its coupon rate, the bond trades at a *premium* (above face value).
+
+The calculation of bond prices and the measurement of interest rate risk (duration and convexity) will be covered in separate lecture notes.
+
+* Types of Bonds
+
+The bond market is large and varied.  Major categories include U.S. government bonds, municipal bonds, corporate bonds, and mortgage-backed securities.
+
+** U.S. Treasury Securities
+
+The U.S. federal government finances its debt by issuing securities through the Department of the Treasury.  These are considered the safest debt instruments in the world because they are backed by the full faith and credit of the U.S. government, which has the power to tax and, in the limit, to print money.  Because of this safety, Treasury yields serve as the *benchmark* (risk-free rate) against which all other bonds are measured.
+
+Treasury securities are classified by maturity at issuance:
+
+- *Treasury Bills (T-Bills)*: Maturities of one year or less.  These belong to the money market, not the bond market, but are important benchmarks.  T-Bills are issued at a discount and pay no coupon---the return comes entirely from the difference between the purchase price and face value.
+
+- *Treasury Notes (T-Notes)*: Maturities of 2, 3, 5, 7, and 10 years.  These pay semiannual coupons and are the most actively traded Treasury securities.
+
+- *Treasury Bonds (T-Bonds)*: Maturities of 20 and 30 years.  The 30-year bond is sometimes called the /long bond/ and is closely watched as a benchmark for long-term interest rates.
+
+- *Treasury Inflation-Protected Securities (TIPS)*: The principal of TIPS adjusts with inflation as measured by the Consumer Price Index (CPI).  Because the coupon is paid on the adjusted principal, both coupon payments and the final principal repayment keep pace with inflation.  TIPS are useful for investors concerned about inflation eroding the purchasing power of their bond returns.
+
+- *I Bonds (Series I Savings Bonds)*: These are non-marketable savings bonds sold directly to individual investors by the Treasury.  Their interest rate combines a fixed rate and an inflation adjustment, making them popular during periods of high inflation.  Because they cannot be resold, they are not traded in secondary markets.
+
+Treasury securities are sold through *auctions* conducted by the Federal Reserve on behalf of the Treasury.  Two types of bidders participate:
+
+- *Competitive bidders* (usually large financial institutions) specify both the quantity and the yield they are willing to accept.
+- *Non-competitive bidders* (usually smaller investors) agree to accept whatever yield the auction determines, in exchange for guaranteed allocation.
+
+** Agency Securities
+
+*Government-sponsored enterprises (GSEs)* such as Fannie Mae (Federal National Mortgage Association), Freddie Mac (Federal Home Loan Mortgage Corporation), and the Federal Home Loan Banks issue bonds known as /agency securities/.  These are not formally backed by the U.S. government (though the 2008 financial crisis demonstrated the government's willingness to support them), so they carry a small yield premium over Treasuries.  GSE bonds play a central role in channeling funds into the mortgage market.
+
+Fully government-owned agencies such as Ginnie Mae (Government National Mortgage Association) do carry an explicit government guarantee.
+
+** Municipal Bonds
+
+*Municipal bonds* (often called /munis/) are issued by state and local governments, as well as their agencies and authorities (such as school districts, port authorities, and public utilities).  The defining feature of municipal bonds is their *federal tax exemption*: interest income is generally exempt from federal income tax, and often from state and local taxes in the state of issuance.
+
+This tax advantage makes munis attractive to high-income investors in high tax brackets.  The relevant comparison is between the muni's *tax-exempt yield* and the *taxable equivalent yield* of an alternative bond:
+
+#+BEGIN_EXAMPLE
+Taxable Equivalent Yield = Tax-Exempt Yield / (1 - Marginal Tax Rate)
+#+END_EXAMPLE
+
+For example, a muni yielding 3% is equivalent to a taxable bond yielding 5% for an investor in the 40% tax bracket.
+
+There are two main types of municipal bonds:
+
+- *General Obligation (GO) Bonds*: Backed by the full taxing power of the issuing government.  The government pledges to raise taxes if necessary to meet debt payments.  These are generally considered safer.
+
+- *Revenue Bonds*: Backed only by the revenue generated by a specific project or facility (a toll road, a stadium, a hospital).  If the project does not generate sufficient revenue, bondholders may not be repaid in full.  Revenue bonds typically carry higher yields than GO bonds.
+
+** Corporate Bonds
+
+*Corporate bonds* are issued by private companies to finance long-term investments, acquisitions, or general operations.  Since corporations can default in a way that the U.S. government cannot, corporate bonds carry *credit risk*---the risk that the issuer will fail to make promised payments.  Investors demand a *credit spread* (yield premium over comparable Treasuries) as compensation for bearing this risk.
+
+Corporate bonds are often classified by credit quality:
+
+- *Investment-grade bonds*: Rated BBB- or higher by Standard & Poor's (Baa3 or higher by Moody's).  These are considered relatively safe and are held by most institutional investors.
+
+- *High-yield bonds* (also called *junk bonds* or *speculative-grade bonds*): Rated below investment grade.  These carry substantially higher default risk but offer higher yields to compensate.  The high-yield market grew dramatically in the 1980s, partly due to the work of Michael Milken at Drexel Burnham Lambert.
+
+Corporate bonds also vary in their *seniority*---the order in which creditors are paid in a bankruptcy:
+
+- *Senior secured bonds*: Backed by specific collateral.  Have the highest claim in bankruptcy.
+- *Senior unsecured bonds*: Not backed by specific assets but have priority over subordinated debt.
+- *Subordinated (junior) bonds*: Paid after senior creditors in bankruptcy; higher yield to compensate.
+
+** Mortgage-Backed Securities (MBS)
+
+*Mortgage-backed securities* are bonds whose cash flows derive from a pool of underlying mortgage loans.  The process of creating MBS is called *securitization*: a financial institution pools thousands of mortgages, transfers them to a special purpose vehicle (SPV), and that vehicle issues bonds backed by the mortgage payments.
+
+Homeowners make monthly principal and interest payments on their mortgages.  Those payments are passed through to MBS investors, which is why the simplest form of MBS is called a *pass-through security*.
+
+MBS introduce a risk not present in ordinary bonds: *prepayment risk*.  Homeowners can refinance or sell their homes at any time, paying off their mortgage early.  When interest rates fall, homeowners refinance en masse, returning principal to MBS investors just when those investors would prefer to keep earning the higher coupons.  This makes MBS cash flows uncertain in a way that complicates valuation.
+
+The major issuers of MBS are Ginnie Mae, Fannie Mae, and Freddie Mac.  Their securities dominate the MBS market and are often called *agency MBS*.
+
+* Credit Risk and Bond Ratings
+
+*Credit risk* (also called *default risk*) is the risk that a bond issuer will fail to make promised interest or principal payments.  Investors demand higher yields on bonds with greater credit risk---this extra yield is the *credit spread* or *risk premium*.
+
+** Credit Rating Agencies
+
+Three major credit rating agencies assess the creditworthiness of bond issuers and assign letter-grade ratings:
+
+- *Standard & Poor's (S&P)*
+- *Moody's Investors Service*
+- *Fitch Ratings*
+
+The rating scales differ slightly in notation but convey the same information:
+
+| Category          | S&P / Fitch  | Moody's    |
+|-------------------+--------------+------------|
+| Highest quality   | AAA          | Aaa        |
+| High quality      | AA           | Aa         |
+| Upper medium      | A            | A          |
+| Medium            | BBB          | Baa        |
+| /Investment grade cutoff/   |    |            |
+| Speculative       | BB           | Ba         |
+| Highly speculative| B            | B          |
+| Very high risk    | CCC          | Caa        |
+| Near default      | CC / C       | Ca / C     |
+| Default           | D            | D          |
+
+Ratings can be modified with a "+" or "-" (S&P/Fitch) or a number 1, 2, 3 (Moody's) to indicate relative standing within a category.
+
+The boundary between BBB-/Baa3 and BB+/Ba1 is critically important.  Many institutional investors (pension funds, insurance companies) are legally or contractually prohibited from holding bonds below investment grade.  When a bond is downgraded from BBB- to BB+ (becoming a *fallen angel*), forced selling can drive its price sharply lower.
+
+** The Role of Ratings in the 2008 Financial Crisis
+
+Credit rating agencies came under severe criticism during the 2008 financial crisis.  Many complex mortgage-backed securities received AAA ratings that proved deeply misleading.  Rating agencies faced conflicts of interest because they were paid by the issuers seeking ratings, not by the investors using them.  The subsequent collapse of AAA-rated MBS contributed to the near-failure of several major financial institutions.
+
+The Dodd-Frank Act of 2010 introduced new regulations for rating agencies, and there have been ongoing efforts to reduce the mechanistic reliance on ratings in financial regulation.
+
+** Credit Spreads Over the Business Cycle
+
+Credit spreads are not static.  They *widen* during recessions and periods of financial stress, as investors become more concerned about default and demand greater compensation.  They *narrow* during expansions, as defaults fall and investors grow more comfortable with credit risk.
+
+Tracking credit spreads (for example, the difference between high-yield and Treasury yields) is a useful real-time indicator of market stress.  Widening spreads often signal deteriorating economic conditions before official recession data are published.
+
+* The Yield Curve
+
+The *yield curve* plots the yields of bonds of the same credit quality (typically U.S. Treasuries) against their maturities, from shortest to longest.  It is one of the most closely watched indicators in financial markets.
+
+** Shapes of the Yield Curve
+
+- *Normal (upward-sloping)*: Long-term yields are higher than short-term yields.  This is the most common shape.  Investors demand a *term premium* for lending money over longer periods, since they face greater uncertainty and interest rate risk.
+
+- *Flat*: Short- and long-term yields are approximately equal.  Often a transitional shape, seen during periods of monetary policy change.
+
+- *Inverted (downward-sloping)*: Short-term yields exceed long-term yields.  This is unusual and historically has been a reliable *predictor of recessions*.  When the Fed raises short-term rates aggressively, or when investors expect rates to fall sharply in the future (due to an anticipated recession), the curve can invert.
+
+- *Humped*: Medium-term yields are higher than both short- and long-term yields.  Less common; can appear during complex monetary policy transitions.
+
+** Theories of the Term Structure
+
+Several theories attempt to explain the shape of the yield curve:
+
+- *Expectations Theory*: Long-term rates are determined by the market's expectation of future short-term rates.  An inverted curve means the market expects short-term rates to fall in the future.  This theory implies that investors are indifferent between holding a long-term bond or a series of short-term bonds.
+
+- *Liquidity Premium Theory* (also called *Preferred Habitat with liquidity bias*): Extends expectations theory by adding a *liquidity (term) premium* for longer maturities.  Because long-term bonds expose investors to more interest rate risk, they require compensation.  This explains why the yield curve is normally upward-sloping even when rate expectations are flat.
+
+- *Market Segmentation Theory*: Different investors have different maturity preferences based on their liabilities (e.g., insurance companies prefer long bonds to match long liabilities; money market funds require short maturities).  Supply and demand within each maturity segment independently determine yields.  Under this view, the curve's shape reflects supply and demand imbalances, not expectations.
+
+** The Yield Curve as an Economic Indicator
+
+Because the yield curve has historically inverted before most U.S. recessions, it is widely used as a leading economic indicator.  The Federal Reserve Bank of New York publishes a model that uses the spread between 10-year and 3-month Treasury yields to estimate the probability of a recession within the next 12 months.
+
+* The Structure of Bond Markets
+
+** Primary Markets
+
+When an issuer sells bonds for the first time, it does so in the *primary market*.  The proceeds go directly to the issuer.
+
+- *U.S. Treasury securities* are sold through regularly scheduled auctions administered by the Treasury.  Auction results are publicly announced and closely watched.
+
+- *Corporate and municipal bonds* are typically underwritten by *investment banks* (underwriters).  In a *firm commitment* underwriting, the bank buys the entire bond issue from the issuer and resells it to investors, bearing the inventory risk.  In a *best efforts* arrangement, the bank acts as an agent and does not guarantee placement.
+
+- Large institutional bond offerings often involve a *syndicate* of multiple investment banks that share the underwriting risk and distribution responsibilities.
+
+** Secondary Markets
+
+After bonds are issued, they can be traded among investors in the *secondary market*.  Unlike equity markets (which are largely exchange-traded and centralized), bond markets are primarily *over-the-counter (OTC)*: trades occur directly between dealers and investors, not on an exchange floor.
+
+Dealers quote *bid prices* (what they will pay to buy a bond) and *ask prices* (what they will accept to sell).  The difference is the *bid-ask spread*, which compensates dealers for holding inventory and bearing risk.  Bid-ask spreads tend to be narrow for actively traded benchmark bonds (on-the-run Treasuries) and much wider for illiquid corporate or municipal bonds.
+
+The bond market is enormous.  The global bond market is larger than the global equity market by total value outstanding.  The U.S. Treasury market is the most liquid fixed-income market in the world and one of the most liquid markets for any asset class.
+
+** Bond Market Participants
+
+The major participants in bond markets include:
+
+- *The U.S. Treasury and Federal Reserve*: The Treasury issues debt; the Fed conducts open market operations (buying and selling Treasuries) to implement monetary policy.
+
+- *Commercial Banks*: Hold large portfolios of bonds as part of their investment portfolios and play an important role as dealers in Treasury and municipal markets.
+
+- *Insurance Companies and Pension Funds*: Among the largest buyers of long-term bonds.  Their long-dated liabilities (future insurance claims, pension obligations) make them natural holders of long-term bonds.  This demand helps shape the long end of the yield curve.
+
+- *Mutual Funds and ETFs*: Bond mutual funds and exchange-traded funds pool money from many investors and hold diversified bond portfolios, providing retail investors access to a market that would otherwise be difficult to navigate.
+
+- *Foreign Governments and Central Banks*: Hold large quantities of U.S. Treasury securities as foreign exchange reserves.  China and Japan are among the largest foreign holders of U.S. Treasuries.
+
+- *Hedge Funds*: Engage in a wide range of bond market strategies, from relative-value trades to highly leveraged bets on interest rate movements.
+
+- *Corporations*: Issue bonds to raise long-term capital.
+
+* Special Bond Features
+
+Many bonds include provisions that modify their cash flows or give certain rights to the issuer or investor.
+
+** Callable Bonds
+
+A *callable bond* gives the issuer the right (but not the obligation) to repurchase (redeem) the bond before maturity at a specified *call price*, usually at or above face value.  Issuers typically call bonds when interest rates have fallen---they can retire the high-coupon debt and refinance at a lower rate.
+
+This is bad news for investors, who face *reinvestment risk*: their bond is called away precisely when they would prefer to keep it, and they must reinvest the returned principal at lower prevailing rates.  As compensation, callable bonds typically offer higher yields than comparable non-callable bonds.
+
+The difference in yield between a callable bond and an otherwise identical non-callable bond reflects the *value of the call option* embedded in the bond.
+
+** Putable Bonds
+
+A *putable bond* gives the *investor* the right to sell the bond back to the issuer at a specified price before maturity.  This protects investors if interest rates rise: they can put the bond back and reinvest at higher rates.  Because this feature benefits investors, putable bonds offer lower yields than comparable non-putable bonds.
+
+** Convertible Bonds
+
+A *convertible bond* can be converted into a specified number of shares of the issuer's common stock, at the investor's option.  Convertibles are hybrid securities that combine features of bonds and equity.
+
+- The *conversion ratio* specifies how many shares each bond converts into.
+- The *conversion price* is the implied per-share price at which conversion becomes attractive.
+
+When the stock price is well below the conversion price, the convertible behaves like a straight bond.  When the stock price rises above the conversion price, the convertible's value is driven by the equity option.  Investors accept lower yields on convertibles in exchange for the potential to participate in equity upside.
+
+** Zero-Coupon Bonds
+
+A *zero-coupon bond* (or /zero/) pays no periodic coupons.  It is issued at a deep discount to face value and repays only the face value at maturity.  The entire return comes from the appreciation from the purchase price to par.
+
+U.S. Treasury STRIPS (Separate Trading of Registered Interest and Principal Securities) are zero-coupon bonds created by separating the coupon payments and principal payment from ordinary Treasury notes and bonds and selling each cash flow separately.
+
+Zero-coupon bonds are highly sensitive to interest rate changes---more so than coupon-paying bonds of the same maturity---because all the cash flow is concentrated at the end.
+
+** Floating-Rate Bonds
+
+Most bonds have a fixed coupon rate.  *Floating-rate bonds* (or /floaters/) have coupon payments that reset periodically based on a reference interest rate, such as SOFR (Secured Overnight Financing Rate, which replaced LIBOR) plus a fixed spread.
+
+As interest rates rise, the coupon on a floater rises as well, which keeps the bond's price close to par.  This makes floaters attractive to investors worried about rising rates.
+
+* Risks in Bond Investing
+
+Bonds expose investors to several distinct risks:
+
+** Interest Rate Risk
+
+*Interest rate risk* (also called *market risk* or *price risk*) is the risk that a bond's price will decline because market interest rates rise.  This is the most fundamental risk in bond investing.  The longer a bond's maturity and the lower its coupon, the greater its sensitivity to interest rate changes.  This sensitivity is measured by a concept called *duration*, which will be covered in detail in separate lecture notes.
+
+** Credit Risk
+
+As discussed above, credit risk is the risk of default by the issuer.  Investors can be partially protected by bond covenants (restrictions in the indenture) and by seniority in the capital structure.  Credit risk is largely absent for U.S. Treasury securities but is material for corporate and some municipal bonds.
+
+** Reinvestment Risk
+
+When a bond pays coupons, the investor must reinvest those payments.  If interest rates have fallen, the coupons can only be reinvested at lower rates, reducing the total realized return.  This is *reinvestment risk*.  It works in the opposite direction from interest rate risk: rising rates hurt a bond's price but help reinvestment; falling rates help price but hurt reinvestment.
+
+** Inflation Risk
+
+A bond promises fixed nominal cash flows.  If inflation is higher than expected, those cash flows buy less in real terms---the bond's real return is eroded.  This is *inflation risk* (or *purchasing power risk*).  TIPS eliminate inflation risk by adjusting principal with the CPI.
+
+** Liquidity Risk
+
+Not all bonds can be sold quickly at a fair price.  *Liquidity risk* is the risk of being unable to sell a bond without accepting a significant price concession.  On-the-run Treasury bonds are highly liquid; many corporate and municipal bonds are thinly traded.
+
+** Call Risk
+
+As discussed above, callable bonds expose investors to *call risk*: the risk that the bond will be redeemed early, typically at an inopportune time for the investor.
+
+** Currency Risk
+
+For bonds denominated in foreign currencies, investors face *currency risk*: adverse exchange rate movements can reduce the dollar return even if the bond performs well in its local currency.
+
+* The Role of the Federal Reserve
+
+Monetary policy implemented by the Federal Reserve has a profound effect on bond markets.
+
+The Fed directly controls the *federal funds rate*---the overnight rate at which banks lend reserves to each other.  Changes in the federal funds rate quickly ripple through short-term interest rates across the economy.
+
+The Fed influences long-term bond yields more indirectly, through its effect on inflation expectations and economic growth expectations.  However, since the 2008 financial crisis, the Fed has also directly purchased large quantities of Treasury bonds and agency MBS as part of *quantitative easing (QE)* programs.  By buying bonds outright, the Fed puts upward pressure on bond prices and downward pressure on long-term yields, even after the federal funds rate has hit the zero lower bound.
+
+The Fed's balance sheet, which reached roughly $9 trillion at its peak in 2022, reflects the enormous scale of these purchases.  The process of allowing that balance sheet to shrink---called *quantitative tightening (QT)*---is the reverse process.
+
+Bond market participants watch every Fed communication closely because even shifts in the expected path of future interest rates can move bond prices significantly.
+
+* Bond Market Indicators to Watch
+
+Several bond market metrics are closely followed by economists, investors, and policymakers:
+
+- *The 10-year Treasury yield*: The most widely cited benchmark interest rate in the world.  It influences mortgage rates, corporate borrowing costs, and serves as the discount rate for many asset valuations.
+
+- *The 2-year/10-year Treasury spread*: The difference between 10-year and 2-year Treasury yields.  A negative spread (inversion) is a closely watched recession signal.
+
+- *The 3-month/10-year Treasury spread*: Used by the NY Fed in their recession probability model.  Has inverted before every U.S. recession since 1960.
+
+- *Credit spreads*: Particularly the spread between high-yield and investment-grade corporate bonds over Treasuries.  Widening spreads indicate stress; tight spreads indicate investor confidence.
+
+- *The TIPS breakeven inflation rate*: The difference between the nominal Treasury yield and the TIPS yield of the same maturity.  This is the market's implied expectation of average inflation over that horizon.
+
+- *Bid-ask spreads and market depth*: Indicators of bond market liquidity, which can deteriorate sharply during periods of stress.
+
+* Summary
+
+The bond market is a large, diverse, and economically critical marketplace.  Key takeaways:
+
+1. Bonds are promises to pay.  The bondholder is a creditor, not an owner.
+2. Bond prices and yields move inversely.
+3. U.S. Treasury securities are the benchmark against which all other bonds are measured.
+4. Credit risk drives yields above the Treasury benchmark; the credit spread compensates investors for default risk.
+5. The yield curve summarizes market expectations about future interest rates and the economy; inversions have historically preceded recessions.
+6. Bond markets are primarily OTC, and liquidity varies enormously across sectors.
+7. Bonds expose investors to interest rate risk, credit risk, reinvestment risk, inflation risk, and liquidity risk.
+8. The Federal Reserve's monetary policy actions and communications are the most important driver of short-term bond market movements.
